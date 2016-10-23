@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Cadastro de Projetos Candidatos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function validateForm() {
+                var a = document.forms["projForm"]["nome"].value;
+                var b = document.forms["projForm"]["categoria"].value;
+                var c = document.forms["projForm"]["duracao"].value;
+                var d = document.forms["projForm"]["valor"].value;
+                if ((a === null || a === "") || (b === null || b === "") ||
+                    (c === null || c === "") || (d === null || d === "")
+                   ) {
+                    alert("Preencha os campos corretamente, sem deixar espaço em branco!");
+                    return false;
+                }
+            }
+        </script>
+       
+    </head>
+    <body>
+        <h3>Cadastre seu projeto!</h3>
+        <h4>Digite o seguintes dados para cadastrar seu projeto:</h4>
+        <form method="post" action="cadastrar.php" name="projForm" onsubmit="return validateForm()">
+            <label for="nm">Nome: </label><input type="text" name="nome" id="nm"/><br/><br/>
+            <label for="cat">Categoria:</label><select name="categoria" id="cat">
+                <option value="Pesquisa">Pesquisa</option>
+                <option value="Competição Tecnológica">Competição Tecnológica</option>
+                <option value="Inovação no Ensino">Inovação no Ensino</option>
+                <option value="Manutenção e Reforma">Manutenção e Reforma</option>
+                <option value="Pequenas Obras">Pequenas Obras</option>
+            </select><br/><br/>
+            <div id="dur">
+                <label for="du">Duração: </label><input type="number" name="duracao" id="du" min="1"/>
+                <br/><br/>
+                Período:<br/>
+                <div id="per">
+                    <input type="radio" name="periodo" id="dia" value="dias" checked/> Dias<br/>
+                    <input type="radio" name="periodo" id="mes" value="meses"/> Meses<br/>
+                    <input type="radio" name="periodo" id="ano" value="anos"/> Anos<br/>
+                </div>
+            </div>
+            <br/>
+            <label for="vl">Valor Previsto: </label><input type="text" name="valor" id="vl"/><br/><br/>
+            Status: <input type="text" value="candidato" name="status" readonly/><br/><br/>
+            <input type="submit" name="cadastrarProjeto.php"/>
+            <input type="reset" value="Voltar"/>
+        </form>
+    </body>
+</html>
