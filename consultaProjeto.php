@@ -25,7 +25,7 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-          <div class="container" >
+         <div class="container" >
             <div class="row">
                 <div class="col-md-3 col-lg-3">
                     <div class="list-group">
@@ -57,30 +57,27 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>	
                 <div class="col-md-9 well admin-content" id="home">
-                    <?php
-           
-                    if (isset($_POST["Cadastrar"])) {
-                        $nome = $_POST["nome"];
-                        $coduser = $_POST["coduser"];
-                        $categoria = $_POST["categoria"];
-                        $duracao = $_POST["duracao"];
-                        $valor = $_POST["valor"];
-                        $status = $_POST["status"];
-                        $db = mysqli_connect("localhost", "root");
-                        mysqli_select_db($db, "spq");
-                        $sql = "INSERT INTO projeto(nome_projeto,id_categoria,codigo_usuario, duracao_projeto,"
-                                . "valor_projeto,status)VALUES('" .
-                                $nome . "','" . $categoria . "','" . $coduser . "','" . $duracao . "','" . $valor . "','" . $status . "'"
-                                . ")";
-                        mysqli_query($db, $sql); /* executa a query */
-                        mysqli_close($db);
-                        echo"<h3>Obrigado. Seus dados foram inseridos.</h3> \n";
-                    }
-                    ?>
+                <h3>Consulte seu projeto!</h3>
+                <h4>Digite o seguintes filtros para consultar seu projeto:</h4>
+                <form method="post" action="consultarProjeto.php" name="projForm">
+                    <label for="cd">Código do projeto: </label><input type="text" name="codigo" id="cd"/><br/><br/>
+                    <label for="nm">Nome do projeto: </label><input type="text" name="nome" id="nm"/><br/><br/>
+                    Categoria:<br/>
+                    <div id="cat">
+                        <input type="radio" name="categoria" value="1" checked/> Pesquisa<br/>
+                        <input type="radio" name="categoria" value="2"/>Competição Tecnológica<br/>
+                        <input type="radio" name="categoria" value="3"/> Inovação no Ensino<br/>
+                        <input type="radio" name="categoria" value="4"/> Manutenção e Reforma<br/>
+                        <input type="radio" name="categoria" value="5"/> Pequenas Obras<br/><br/>
+                    </div>
+                    <input type="submit" name="Consultar"/>
+                    <input type="reset" value="Voltar"/>
+                </form>
                 </div> 
             </div>		
         </div>
     </body>
 </html>
+

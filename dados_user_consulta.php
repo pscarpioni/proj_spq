@@ -2,12 +2,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Listagem de Projetos Candidatos</title>
+        <title>Consultar Usuário</title>
         <link href="css/estilo_pages.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
+    </head>
     <body>
         <nav class="navbar navbar navbar-inverse">
             <div class="container-fluid">
@@ -25,7 +25,7 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="container" >
+            <div class="container" >
             <div class="row">
                 <div class="col-md-3 col-lg-3">
                     <div class="list-group">
@@ -59,57 +59,43 @@
                     </div>
                 </div>	
                 <div class="col-md-9 well admin-content" id="home">
-                    <h3>Exibindo os projetos cadastrados</h3>
                     <?php
-                    $nome = NULL;
-                    $codigo = NULL;
-                    if (isset($_POST["Consultar"])) {
-                        if (isset($_POST["codigo"]))
-                            $codigo = $_POST["codigo"];
-                        if (isset($_POST["nome"]))
-                            $nome = $_POST["nome"];
-                        $categoria = $_POST["categoria"];
+                    if (isset($_GET["busca"])) {
                         $db = mysqli_connect("localhost", "root");
-                        mysqli_select_db($db, "spq");
-                        if ($codigo || $nome) {
-                            if ($codigo && !$nome)
-                                $sql = "SELECT nome_projeto,id_categoria,valor_projeto,duracao_projeto FROM "
-                                        . "projeto WHERE codigo_projeto = '"
-                                        . $codigo . "' AND id_categoria = '" . $categoria . "'";
-                            else
-                            if (!$codigo && $nome)
-                                $sql = "SELECT nome_projeto,id_categoria,valor_projeto,duracao_projeto FROM "
-                                        . "projeto WHERE nome_projeto = '"
-                                        . $nome . "' AND id_categoria = '" . $categoria . "'";
-                            else
-                                $sql = "SELECT nome_projeto,id_categoria,valor_projeto,duracao_projeto FROM "
-                                        . "projeto WHERE codigo_projeto = '"
-                                        . $codigo . "' AND id_categoria = '" . $categoria . "' AND nome_projeto = '" .
-                                        $nome . "'" . "";
-
-                            $result = mysqli_query($db, $sql); /* executa a query */
-                            while ($row = mysqli_fetch_array($result)) { //erro está aqui
-                                echo "<h5> Nome: " . $row["nome_projeto"] . "</h5> \n";
-                                echo "<h5> Categoria: " . $row["id_categoria"] . "<br/><br/>"
-                                . " Valor: R$" . $row["valor_projeto"] . "<br/><br/> Duração: " . $row["duracao_projeto"] .
-                                " meses</h5> \n";
-                            }
-                        } else {
-                            echo"<form action='categorias.php' name='form1' method='post'>";
-                            echo"<input type='text' name='categoria' value='$categoria' readonly/>";
-                            echo"<input type='submit' value='Nome do Projeto Candidato'/>";
-                            echo"</form>";
-
+                        if (!$db) {
+                            die('Não foi possível Conectar: ' . mysql_error());
                         }
+                        mysqli_select_db($db, "spq");
 
-                        mysqli_close($db);
-                    }
+                        echo "<div class='panel panel-default'>
+                                    <table class='table'> <tr>
+                                    <th>Dados do Usuário</th>
+                                    </tr>  </table></div>";
+                        
+                            $busca=$_GET["busca"];
+                            $query = ("select * from usuario where login='" . $busca . "'");
+                            $res = mysqli_query($db, $query);
+                            while ($consulta = mysqli_fetch_array($res)) {
+                                echo"<b> Código: </b>" . $consulta['codigo_usuario'] . "<br>
+                                <b> Nome Completo: </b>" . $consulta['nome'] . "<br>"
+                                . " <b> Login: </b>" . $consulta['login'] . "<br>"
+                                . "<b> País: </b>" . $consulta['pais'] . "<br>"
+                                . "<b> Estado: </b>" . $consulta['estado'] . "<br>"
+                                . "<b> Cidade: </b>" . $consulta['cidade'] . "<br>"
+                                . "<b> Data de nascimento: </b>" . $consulta['data_nascimento'] . "<br>"
+                                . "<b> Email: </b>" . $consulta['email'] . "<br>"
+                                . "<b> Status: </b>" . $consulta['status'] . "<br>"
+                                . "<b> Tipo de usuário: </b>" . $consulta['tipo'] . "<br><br>";
+                                if ($consulta['tipo'] == "3")
+                                    echo "<b> Categoria de projeto: </b>" . $consulta['id_categoria'] . "<br><br>";
+                            }
+                            echo "<p align='center'><a href = 'javascript:history.back()'>Voltar</a><p/>";
+                            mysqli_close($db);
+                            return 0;
+                        }                        
                     ?>
                 </div> 
             </div>		
         </div>
     </body>
 </html>
-
-
-
