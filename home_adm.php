@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Listagem de Projetos Candidatos</title>
+        <title>Tela Inicial</title>
         <link href="css/estilo_pages.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -24,8 +24,8 @@
                     </button>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-        </nav>
-          <div class="container" >
+        </nav>	 
+        <div class="container" >
             <div class="row">
                 <div class="col-md-3 col-lg-3">
                     <div class="list-group">
@@ -57,28 +57,9 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>				   
                 <div class="col-md-9 well admin-content" id="home">
-                    <?php
-           
-                    if (isset($_POST["Cadastrar"])) {
-                        $nome = $_POST["nome"];
-                        $coduser = $_POST["coduser"];
-                        $categoria = $_POST["categoria"];
-                        $duracao = $_POST["duracao"];
-                        $valor = $_POST["valor"];
-                        $status = $_POST["status"];
-                        $db = mysqli_connect("localhost", "root");
-                        mysqli_select_db($db, "spq");
-                        $sql = "INSERT INTO projeto(nome_projeto,id_categoria,codigo_usuario, duracao_projeto,"
-                                . "valor_projeto,status)VALUES('" .
-                                $nome . "','" . $categoria . "','" . $coduser . "','" . $duracao . "','" . $valor . "','" . $status . "'"
-                                . ")";
-                        mysqli_query($db, $sql); /* executa a query */
-                        mysqli_close($db);
-                        echo"<h3>Obrigado. Seus dados foram inseridos.</h3> \n";
-                    }
-                    ?>
+                    <h2>Bem vindo!!!</h2>
                 </div> 
             </div>		
         </div>

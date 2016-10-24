@@ -2,11 +2,26 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Listagem de Projetos Candidatos</title>
+        <title>Cadastrar Projetos Candidatos</title>
         <link href="css/estilo_pages.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm() {
+                var a = document.forms["projForm"]["nome"].value;
+                var b = document.forms["projForm"]["categoria"].value;
+                var c = document.forms["projForm"]["duracao"].value;
+                var d = document.forms["projForm"]["valor"].value;
+                var e = document.forms["projForm"]["coduser"].value;
+                if ((a === null || a === "") || (b === null || b === "") ||
+                        (c === null || c === "") || (d === null || d === "")
+                        ) {
+                    alert("Preencha os campos corretamente, sem deixar espaço em branco!");
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <nav class="navbar navbar navbar-inverse">
@@ -57,28 +72,28 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>	
                 <div class="col-md-9 well admin-content" id="home">
-                    <?php
-           
-                    if (isset($_POST["Cadastrar"])) {
-                        $nome = $_POST["nome"];
-                        $coduser = $_POST["coduser"];
-                        $categoria = $_POST["categoria"];
-                        $duracao = $_POST["duracao"];
-                        $valor = $_POST["valor"];
-                        $status = $_POST["status"];
-                        $db = mysqli_connect("localhost", "root");
-                        mysqli_select_db($db, "spq");
-                        $sql = "INSERT INTO projeto(nome_projeto,id_categoria,codigo_usuario, duracao_projeto,"
-                                . "valor_projeto,status)VALUES('" .
-                                $nome . "','" . $categoria . "','" . $coduser . "','" . $duracao . "','" . $valor . "','" . $status . "'"
-                                . ")";
-                        mysqli_query($db, $sql); /* executa a query */
-                        mysqli_close($db);
-                        echo"<h3>Obrigado. Seus dados foram inseridos.</h3> \n";
-                    }
-                    ?>
+                    <h3>Cadastre seu projeto!</h3>
+                    <h4>Digite o seguintes dados para cadastrar seu projeto:</h4>
+                    <form method="post" action="cadastrarProjeto.php" name="projForm" onsubmit="return validateForm()">
+                        <br><label for="cdu">Código do usuário: </label><input type="text" name="coduser" id="cdu"/>
+                        <br/><br/>
+                        <label for="nm">Nome: </label><input type="text" name="nome" id="nm"/><br/><br/>
+                        <b> Categoria: </b><br/>
+                        <div id="cat">
+                            <input type="radio" name="categoria" value="1" checked/> Pesquisa<br/>
+                            <input type="radio" name="categoria" value="2"/> Competição Tecnológica<br/>
+                            <input type="radio" name="categoria" value="3"/> Inovação no Ensino<br/>
+                            <input type="radio" name="categoria" value="4"/> Manutenção e Reforma<br/>
+                            <input type="radio" name="categoria" value="5"/> Pequenas Obras<br/><br/>
+                        </div>
+                        <label for="du"> Duração (em meses): </label><input type="number" name="duracao" id="du" min="1"/><br/><br/>
+                        <label for="vl"> Valor Previsto: </label><input type="text" name="valor" id="vl"/><br/><br/>
+                        <b> Status: </b> <input type="text" value="candidato" name="status" readonly/><br/><br/>
+                        <input type="submit" name="Cadastrar" value="Cadastrar"/>
+                        <input type="reset" value="Voltar"/>
+                    </form>
                 </div> 
             </div>		
         </div>
