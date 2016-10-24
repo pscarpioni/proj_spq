@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Cadastro de Projetos Candidatos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>Consulte seu projeto!</h3>
+        <h4>Por favor, digite a categoria do projeto:</h4>
+        <form method="post" action="categorias.php" name="projForm">
+            <label for="cat">Categoria:</label><select name="categoria" id="cat">
+                <option value="Pesquisa">Pesquisa</option>
+                <option value="Competição Tecnológica">Competição Tecnológica</option>
+                <option value="Inovação no Ensino">Inovação no Ensino</option>
+                <option value="Manutenção e Reforma">Manutenção e Reforma</option>
+                <option value="Pequenas Obras">Pequenas Obras</option>
+            </select><br/><br/>
+            <input type="submit" name="Consultar"/>
+            <input type="reset" value="Voltar"/>
+        </form>
+    </body>
+</html>
