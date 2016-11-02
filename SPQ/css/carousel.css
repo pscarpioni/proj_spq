@@ -1,0 +1,5 @@
+.carousel-inner > .item > img {
+    position: relative;
+    min-width: 100%;
+    height:550px; /* Altura da imagem dentro do Carousel */
+}
