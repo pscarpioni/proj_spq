@@ -1,0 +1,35 @@
+body{
+	margin-top:50px;
+}
+
+div#d1{
+  background-color: #008B8B;
+  margin-top:0px;
+  margin-bottom:30px;
+  padding:3px;
+
+}
+div#backg{
+	
+}
+
+h2#h2_pag{
+	text-align:center;
+	color: White; 
+}
+
+.glyphicon { 
+	margin-right:10px;
+}
+
+.panel-body { 
+	padding:0px; 
+}
+
+.panel-body table tr td { 
+	padding-left: 15px;
+}
+
+.panel-body .table {
+	margin-bottom: 0px; 
+}
