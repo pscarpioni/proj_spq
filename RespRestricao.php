@@ -86,7 +86,6 @@ if (isset($_POST["restricao"])) {
                 . "'".$valor_min."','".$valor_max."')";
         }
         
-        echo $query;
         mysqli_query($db, $query); /* executa a query */
         mysqli_close($db);
         include 'respCadastroCriterios.php';

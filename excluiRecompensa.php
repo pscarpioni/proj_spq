@@ -22,7 +22,8 @@
 
             $res = mysqli_query($db, $query);
         } else {
-            echo " <h2>As recompensas desse projeto não podem serem alteradas!</h2><br>";
+            echo " <h3>As recompensas desse projeto não podem serem excluídas pois ele ainda está em andamento!</h3><br>";
+            return 0;            
         }
     }
     if ($res) {

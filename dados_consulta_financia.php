@@ -27,7 +27,7 @@
         }
         mysqli_select_db($db, "spq");
 
-        echo "<h3>Financiar projeto: </h3>";
+        echo "<h3><ins>Financiamento do projeto </ins></h3>";
 
 
         $busca = $_GET["busca"];
@@ -35,18 +35,18 @@
         $res = mysqli_query($db, $query);
         while ($consulta = mysqli_fetch_array($res)) {
             echo "<form action='RespFinancia.php' method='POST' id='form' name='frm' onsubmit='return validacao(this)'>"
-            . "<b>Codigo do Projeto: <input type='text' name='codigo' size='20' value=" . $consulta['codigo_projeto'] . " readonly><br><br>"
-            . "<b>Categoria: </b> <input type='text' name='categoria' size='20' value=" . $consulta['id_categoria'] . " readonly><br><br>
+            . "<input type='hidden' name='codigo' size='20' value=" . $consulta['codigo_projeto'] . " readonly>"
+            . "<input type='hidden' name='categoria' size='20' value=" . $consulta['id_categoria'] . " readonly><br><br>
              <b> Tipo de Financiamento: </b> <select id = 'tip' name='tipo' onblur='liberar();'> 
                     <option value='Integral'>Integral</option>
                     <option value='Módulo'>Módulo</option>
                    </select><br><br>
             <b> Quantidade de módulos: </b> <input type='text' id='modulos' name='modulos' style='visibility: hidden;'> <br><br>  
-             <b> Valor a ser pago: </b> <input type='text' name='valor'> <br><br>
+             <b> Valor a ser pago: </b> <input type='number' value='1' name='valor' min='0'> <br><br>
              <b> Forma de pagamento: </b> <select id = 'pag' name='pag'> 
                     <option value='Boleto Bancario'>Boleto Bancário</option>
-                    <option value='Cartão de Credito'>Cartão de Crédito</option>
-                    <option value='Cartão de Debito'>Cartão de Débito</option>
+                    <option value='Cartao de Credito'>Cartão de Crédito</option>
+                    <option value='Cartao de Debito'>Cartão de Débito</option>
                     <option value='Cheque'>Cheque</option>
                     <option value='Transferencia Bancaria'>Transferência Bancária</option>
                    </select><br><br> <br><br>";

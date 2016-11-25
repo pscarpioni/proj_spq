@@ -1,20 +1,5 @@
 <?php include("cabecalho_funcionalidade.php"); ?>
-<script type="text/javascript">
 
-    function validacao(frm) {
-        if (document.frm.nome.value == "" || document.frm.descricao.value == "" || document.frm.valorMinimo.value == "" || document.frm.valorMaximo.value == "" || document.frm.limite.value == "") {
-            alert("Preencha corretamente todos os campos!");
-            frm.nome.focus();
-            return false;
-        }
-        if (document.frm.valorMinimo.value < 0 || document.frm.valorMaximo.value < 0 || document.frm.limite.value < 0 || document.frm.valorMinimo.value > document.frm.valorMaximo.value) {
-            alert("Os valores devem ser maiores que 0 e o valor máximo maior que o valor mínimo");
-            frm.valorMinimo.focus();
-            return false;
-        }
-        document.frm.submit();
-    }
-</script>
 </head>
 <div class="col-md-9 well admin-content" id="home">
     <?php
@@ -39,7 +24,7 @@
 
             while ($consulta = mysqli_fetch_array($res)) {
                 echo"<tr height='50'>
-                    <form action = 'respAlteraRecompensa.php' method = 'POST' id = 'form' name = 'frm' onsubmit='return validacao(this);'>
+                    <form action = 'respAlteraRecompensa.php' method = 'POST' id = 'form' name = 'frm'>
                     <div class = 'text-center'>
                     <h2><ins>Alterar Recompensa </ins></h2><br></div>
                         <b> Nome do Projeto: </b> <input type = 'text' name = 'nome' size = '50' value = " . $consulta['nome_projeto'] . " readonly='readonly'><br><br>
@@ -59,7 +44,7 @@
                             </form>";
             }
         } else {
-            echo " <h2>As recompensas desse projeto não podem serem alteradas!</h2><br>";
+            echo " <h2>As recompensas desse projeto não podem serem alteradas! Pois o projeto ainda está ativo.</h2><br>";
         }
     }
     ?>

@@ -9,12 +9,6 @@
 
         $db = mysqli_connect("localhost", "root");
         mysqli_select_db($db, "spq");
-        $result = "SELECT criterio_avaliacao, peso_criterio FROM criterio_avaliacao where id_categoria='" . $categoria . "'";
-        $total = 0;
-        $res1 = mysqli_query($db, $result);
-        while ($consulta = mysqli_fetch_array($res1)) {
-            $total++;
-        }
 
         echo "<div class='panel panel-default'>
          <tr><form method='POST' action='fichaAvaliacao.php'>";

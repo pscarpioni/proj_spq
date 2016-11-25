@@ -2,8 +2,8 @@
 <div class="col-md-9 well admin-content" id="home">
     <form action="RespConsultaRecompensa.php" method="POST" id="form" name="frm">
         <div class="text-center">
-            <h2><ins>Consulta de Recompensas </ins></h2><br></div>
-        <b> Nome do Projeto: </b> <input type="text" name="nome" size="50"><br><br>
+            <h2><ins>Consulta de recompensas atribuídas a um projeto</ins></h2><br></div><br>
+               <input type="text" name="nome" class="form-control" placeholder="Digite aqui o nome do projeto"><br><br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

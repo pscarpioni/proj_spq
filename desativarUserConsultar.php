@@ -13,7 +13,7 @@
         <div class="text-center">
             <h2><ins>Desativar Usuário</ins></h2><br></div>
 
-        <input type="text" name="login" class="form-control" placeholder="Digite aqui o login do Usuário"><br><br>
+        <input type="text" name="login" class="form-control" placeholder="Digite aqui o login do Usuário" required><br><br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

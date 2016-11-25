@@ -63,7 +63,7 @@
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-copy btn-lg"></i>Critérios de Avaliação
+                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-file btn-lg"></i>Critérios de Avaliação
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="cadastrarCriteriosAvaliacao.php">Cadastrar Critérios de Avaliação </a></li>
@@ -76,7 +76,7 @@
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-copy btn-lg"></i>Avaliação
+                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-pencil btn-lg"></i>Avaliação
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="avaliaProjeto.php">Avaliar Projeto </a></li>
@@ -87,7 +87,7 @@
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-copy btn-lg"></i>Projetos Aprovados
+                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-ok btn-lg"></i>Projetos Aprovados
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="consultaAprovado.php">Consultar Projetos Aprovados </a></li>
@@ -96,7 +96,7 @@
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-copy btn-lg"></i>Financiar Projeto
+                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-credit-card btn-lg"></i>Financiar Projeto
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="cadastroFinanciaProjeto.php">Cadastrar Financiamento </a></li>
@@ -107,12 +107,29 @@
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-copy btn-lg"></i>Relatório de Financiamento
-                            </button>
+                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-transfer btn-lg"></i>Recompensa
+                                <span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="relatorio_financiamento.php">Relatório</a></li>
+                                <li><a href="cadastrarRecompensa.php">Cadastrar Recompensa </a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="consultarRecompensa.php">Consultar Recompensa </a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="alterarRecompensa.php">Alterar Recompensa </a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="excluirRecompensa.php">Excluir Recompensa </a></li>
                             </ul>
                         </div>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle list-group-item" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-arrow-right btn-lg"></i>Valor de Repasse
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="cadastroRepasseFinanceiro.php">Cadastrar Valor de Repasse </a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="consultarRepasseFinanceiro.php">Consultar Valor de Repasse </a></li>
+                            </ul>
+                        </div>
+                        <a class="list-group-item" href="geraRelatorioInvestimento.php"><i class="glyphicon glyphicon-list-alt btn-lg"></i>Relatório de Investimentos</a>
+                        <a class="list-group-item" href="geraRelatorioCategoria2.php"><i class="glyphicon glyphicon-list btn-lg"></i>Relatório de Projetos por &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Categoria</a>
                     </div>
                 </div>
                 </body>

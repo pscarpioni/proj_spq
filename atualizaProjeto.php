@@ -4,7 +4,7 @@
         <div class="text-center">
             <h2><ins>Alterar Dados do Projeto</ins></h2><br></div>
 
-        <input type="text" name="valor" class="form-control" placeholder="Digite aqui o nome do projeto"><br><br>
+        <input type="text" name="valor" class="form-control" placeholder="Digite aqui o nome do projeto" required><br><br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

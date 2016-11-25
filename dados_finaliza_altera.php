@@ -31,7 +31,7 @@
         echo "<form action='finalizaProjeto.php' method='POST'>";
         echo"<center><input type='submit' name='finalizar' class='btn btn-primary btn-lg' value='Finalizar Projeto'></center>";
         echo"<input type='hidden' name='codigo' value='$busca'/><br><br>";
-        echo "<p align='center'><a href = 'javascript:history.back()'>Voltar</a><p/>";
+        echo "<p align='center'><a href = 'consultaFinalizaProjeto.php'>Voltar</a><p/>";
         echo "</form>";
         mysqli_close($db);
         return 0;

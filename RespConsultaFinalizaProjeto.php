@@ -20,8 +20,9 @@
                 $res = mysqli_query($db, $query);
                 while ($consulta = mysqli_fetch_array($res)) {
                     echo"<tr>
-                                        <td><a href='dados_finaliza_altera.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] . "</a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                    
+                                        <td>" . $consulta['codigo_projeto'] . "</td>    
+                                        <td><a href='dados_finaliza_altera.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] . "</a></td>
+                                                                        
                                         </tr>";
                 }
                 echo"</td></tr><br></table></div>";

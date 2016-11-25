@@ -18,14 +18,16 @@
 </head>
 
 <div class="col-md-9 well admin-content" id="home">
-    <form action="cadastroRecompensa.php" method="POST" id="form" name="frm" onsubmit="return validacao(this);">
+    <form action="cadastroRecompensa.php" method="POST" id="form" name="frm">
         <div class="text-center">
-            <h2><ins>Atribui Recompensa a um Projeto </ins></h2><br></div>
-        <b> Nome do Projeto: </b> <input type="text" name="nome" size="50"><br><br>
-        <b> Descrição da Recompensa: </b> <input type="text" name="descricao" size="50"> <br><br>
-        <b> Valor mínimo do financiamento: </b> <input type="text" name="valorMinimo" size="20"> <br><br>
-        <b> Valor máximo do financiamento: </b> <input type="text" name="valorMaximo" size="20"><br><br>
-        <b> Limite: </b> <input type="text" name="limite" size="20">
+            <h2><ins>Atribuir Recompensa a um Projeto </ins></h2><br></div>
+        <br> <b> (*) campos de preenchimento obrigatório </b><br><br><br>
+        <b> *Nome do Projeto: </b> <input type="text" name="nome" size="50"><br><br>
+        <b> *Descrição da Recompensa: </b> <input type="text" name="descricao" size="50"> <br><br>
+        <b> *Valor mínimo do financiamento para receber esta recompensa: </b> <input type="number" name="valorMinimo" size="20"> <br><br>
+        <b> *Valor máximo do financiamento para receber esta recompensa: </b> <input type="number" name="valorMaximo" size="20"><br><br>
+        <b> *Número limite de itens desta recompensa a serem ofertados: </b> <input type="number" name="limite" size="20"><br><br><br>
+         <?php echo " <input type='hidden' name='coduser' value=" . $_SESSION["codigo"] . " id='cdu'/> \n"; ?>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

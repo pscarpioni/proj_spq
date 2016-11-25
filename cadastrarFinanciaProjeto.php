@@ -8,8 +8,7 @@
         }
         mysqli_select_db($db, "spq");
         
-        
-        
+               
         echo "<h3>Financiar projeto: </h3>"; 
         if ((empty($_POST["codigo"])) && (empty($_POST["nome"]))) {
             echo "<div class='panel panel-default'>
@@ -21,8 +20,9 @@
             $res = mysqli_query($db, $query);
             while ($consulta = mysqli_fetch_array($res)) {
                 echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] . "</a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                                    <td>" . $consulta['codigo_projeto'] . "</td>      
+                                    <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] . "</a></td>
+                                                                                
                                         </tr>";
             }
             echo" </table></div>";
@@ -40,8 +40,9 @@
             $res = mysqli_query($db, $query);
             if ($consulta = mysqli_fetch_array($res)) {
                 echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] . "</a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                                <td>" . $consulta['codigo_projeto'] . "</td>                                           
+                               <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] . "</a></td>
+                                                                              
                                         </tr>";
             }
             echo" </table></div>";
@@ -59,8 +60,9 @@
             $res = mysqli_query($db, $query);
             if ($consulta = mysqli_fetch_array($res)) {
                 echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] . "</a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                                        <td>" . $consulta['codigo_projeto'] . "</td> 
+                                        <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] . "</a></td>
+                                                                                
                                         </tr>";
             }
             echo" </table></div>";
@@ -78,8 +80,9 @@
             $res = mysqli_query($db, $query);
             if ($consulta = mysqli_fetch_array($res)) {
                 echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] . "</a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                                    <td>" . $consulta['codigo_projeto'] . "</td>      
+                                    <td><a href='dados_consulta_financia.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] . "</a></td>
+                                                                                
                                         </tr>";
             }
             echo" </table></div>";

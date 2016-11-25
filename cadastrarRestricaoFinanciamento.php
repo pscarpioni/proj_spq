@@ -8,19 +8,20 @@
         }
         mysqli_select_db($db, "spq");
 
-        echo "<h3>Financiar projeto: </h3>"; 
+        echo "<h3>Selecione o projeto: </h3> <br>"; 
         if ((empty($_POST["codigo"])) && (empty($_POST["nome"]))) {
             echo "<div class='panel panel-default'>
                                     <table class='table'> <tr>
-                                    <th width='200' >Codigo do Projeto</th>
+                                    <th width='200' >Código do Projeto</th>
                                     <th width='200'>Nome</th>
                                     </tr> ";
             $query = ("select codigo_projeto, nome_projeto, id_categoria, status, valor_projeto from projeto where status = 'Aprovado'");
             $res = mysqli_query($db, $query);
             while ($consulta = mysqli_fetch_array($res)) {
                 echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] .  "</a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                <td>" . $consulta['codigo_projeto'] . "</td>                                           
+               <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] .  "</a></td>
+                                                                              
                                         </tr>";
             }
             echo" </table></div>";
@@ -37,9 +38,10 @@
             $query = ("select codigo_projeto, nome_projeto, id_categoria, status, valor_projeto from projeto where codigo_projeto = '" . $_POST["codigo"] . "' and nome_projeto = '" . $_POST["nome"] . "' and status = 'Aprovado'");
             $res = mysqli_query($db, $query);
             if ($consulta = mysqli_fetch_array($res)) {
-                echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] .  " </a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                echo"<tr height='50'>        
+                     <td>" . $consulta['codigo_projeto'] . "</td>   
+                                        <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] .  " </a></td>
+                                                                              
                                         </tr>";
             }
             echo" </table></div>";
@@ -57,8 +59,9 @@
             $res = mysqli_query($db, $query);
             if ($consulta = mysqli_fetch_array($res)) {
                 echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] . "</a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                            <td>" . $consulta['codigo_projeto'] . "</td>                                          
+                            <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] . "</a></td>
+                                        
                                         </tr>";
             }
             echo" </table></div>";
@@ -75,9 +78,10 @@
             $query = ("select codigo_projeto, nome_projeto, id_categoria, status, valor_projeto from projeto where nome_projeto = '" . $_POST["nome"] . "'  and status = 'Aprovado'");
             $res = mysqli_query($db, $query);
             if ($consulta = mysqli_fetch_array($res)) {
-                echo"<tr height='50'>                                    
-                                        <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['codigo_projeto'] . " </a></td>
-                                        <td>" . $consulta['nome_projeto'] . "</td>                                          
+                echo"<tr height='50'>       
+                                        <td>" . $consulta['codigo_projeto'] . "</td> 
+                                        <td><a href='dados_consulta_restricao.php?busca=" . $consulta['codigo_projeto'] . "'>" . $consulta['nome_projeto'] . " </a></td>
+                                        
                                         </tr>";
             }
             echo" </table></div>";

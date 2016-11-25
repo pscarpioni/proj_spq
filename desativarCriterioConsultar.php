@@ -4,7 +4,7 @@
         <div class="text-center">
             <h2><ins>Desativar Critério de Avaliação</ins></h2><br></div>
 
-        <input type="text" name="criterio" class="form-control" placeholder="Digite aqui o nome do criterio de avaliação"><br><br>
+        <input type="text" name="criterio" class="form-control" placeholder="Digite aqui o nome do critério de avaliação" required><br><br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

@@ -1,3 +1,4 @@
+<?php include("cabecalho_funcionalidade.php"); ?>
 <?php
 
 if (isset($_POST["financiar"])) {
@@ -15,7 +16,7 @@ if (isset($_POST["financiar"])) {
     $modulos = $_POST["modulos"];
     $valor = $_POST["valor"];
     $pag = $_POST["pag"];
-    $codigo_usuario = "1";
+
     
     $min = ("select valor_min from restricao_financiamento where codigo_projeto ='" .$codigo . "'");
     $res_min = mysqli_query($db, $min); //manda executar pra pegar valor
@@ -34,11 +35,11 @@ if (isset($_POST["financiar"])) {
         include 'respNegativaFinanciamento.php';
         
     } else {
-        
-        $strSQL = ("INSERT INTO financiamento (codigo_projeto,id_categoria,codigo_usuario,tipo_financ,quant_modulos, valor, forma_pagamento) VALUES ('" . $codigo . "','" . $categoria . "','" . $codigo_usuario . "','" . $tipo . "','" . $modulos . "','" . $valor . "','" . $pag . "')");
+        $data = date("Y-m-d");
+        $strSQL = ("INSERT INTO financiamento (codigo_projeto,id_categoria,codigo_usuario,tipo_financ,quant_modulos, valor, forma_pagamento, data_financiamento) VALUES ('" . $codigo . "','" . $categoria . "','" . $_SESSION['codigo'] . "','" . $tipo . "','" . $modulos . "','" . $valor . "','" . $pag . "','" . $data . "')");
          mysqli_query($db, $strSQL); /* executa a query */
         mysqli_close($db);
-        include 'respCadastroCriterios.php';
+        echo "<div class='col-md-9 well admin-content' id='home'><h3>Financiamento Realizado com Sucesso!</h3><br></div>";
     }  
    
 }

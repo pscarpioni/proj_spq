@@ -1,11 +1,11 @@
 <!DOCTYPE>
 <?php include("cabecalho_funcionalidade.php"); ?>
 <div class="col-md-9 well admin-content" id="home">
-    <h3>Consulte seu projeto: </h3>
+     <h3>Consulte o projeto o qual deseja cadastrar uma restrição: </h3><br><br>
     
     <form action="cadastrarRestricaoFinanciamento.php" method="POST" id="form" name="frm">
-        <label for="cd">Código do projeto: </label><input type="text" name="codigo" size="30"><br/><br/>
-        <label for="nm">Nome do projeto: </label><input type="text" name="nome" size="50"><br/><br/>
+        <label for="cd">Código do projeto (preenchimento opcional): </label> <input type="text" class="form-control" name="codigo" size="30"><br/><br/>
+        <label for="nm">Nome do projeto (preenchimento opcional): </label> <input type="text" class="form-control" name="nome" size="50"><br/><br/><br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

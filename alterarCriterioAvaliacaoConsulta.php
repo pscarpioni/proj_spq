@@ -4,7 +4,7 @@
         <div class="text-center">
             <h2><ins>Alterar Critério de Avaliação</ins></h2><br></div>
 
-        <input type="text" name="valor" class="form-control" placeholder="Digite aqui o nome do Critério de Avaliação"><br><br>
+        <input type="text" name="valor" class="form-control" placeholder="Digite aqui o nome do Critério de Avaliação" required><br><br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

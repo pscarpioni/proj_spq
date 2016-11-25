@@ -3,7 +3,7 @@
     <div class="text-center">
         <h2><ins>Remover Projeto</ins></h2><br></div>
     <form method="post" action="apagarProjeto.php" name="projForm">
-        <input type="text" name="valor" class="form-control" placeholder="Digite aqui o nome do projeto"><br><br>
+        <input type="text" name="valor" class="form-control" placeholder="Digite aqui o nome do projeto" required><br><br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						

@@ -22,21 +22,15 @@
 <div class="col-md-9 well admin-content" id="home">
     <form action="alteraNotaCriterio.php" method="POST" id="form" name="projForm" onsubmit="return validacao()">
         <div class="text-center">
-            <h2><ins>Alteração de notas da avaliação do projeto</ins></h2><br></div>
-        <label for="cd">Código do Projeto: </label><input type="text" name="codigo" id="cd"/><br><br>
-        <label for="nm">Nome do Projeto: </label><input type="text" name="nome" id="nm"/><br><br>
-        <b> Categoria do Projeto: </b><br/>
-        <div id="cat">
-            <input type="radio" name="categoria" value="1" checked/> Pesquisa<br/>
-            <input type="radio" name="categoria" value="2"/> Competição Tecnológica<br/>
-            <input type="radio" name="categoria" value="3"/> Inovação no Ensino<br/>
-            <input type="radio" name="categoria" value="4"/> Manutenção e Reforma<br/>
-            <input type="radio" name="categoria" value="5"/> Pequenas Obras<br/><br/>
-        </div><br><br>
+            <h2><ins>Alteração de notas da avaliação de um projeto</ins></h2><br></div>
+        
+        <?php echo " <input type='hidden' name='codigo' value=" . $_SESSION["codigo"] . " id='cdu'/> \n"; ?>
+        <input type="text" name="nome" class="form-control" placeholder="Digite aqui o nome do projeto" required><br><br>
+        
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">						
-                    <input type="submit" name="consultar" class="btn btn-primary btn-lg" value="consultar" onclick="">
+                    <input type="submit" name="consultar" class="btn btn-primary btn-lg" value="Consultar" onclick="">
                     <input type="reset" name="reset" class="btn btn-primary btn-lg" value="Limpar Campos">
                 </div>	
             </div>

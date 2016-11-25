@@ -28,7 +28,7 @@
              . "<b> Imagem: </b><br><br><center><img src='upload/" . $consulta["imagem"] . "' width='800' height='500'></center>";
         }
         echo"</td></tr><br></table></div>";
-        echo "<p align='center'><a href = 'javascript:history.back()'>Voltar</a><p/>";
+        echo "<p align='center'><a href = 'consultaAprovado.php'>Voltar</a><p/>";
         mysqli_close($db);
         return 0;
     }
